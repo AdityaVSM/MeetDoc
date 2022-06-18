@@ -2,6 +2,7 @@ package com.example.meetdoc.Adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,13 +50,13 @@ public class AppointmentAdapter extends ArrayAdapter<Appointments> {
         doctor_spc.setText(currentAppointment.getDoctor_specialization());
         dr_name.setText(currentAppointment.getDoctor_name());
         if(currentAppointment.getAccepted() == 2){
-            appointment_card.setBackgroundColor(R.color.wait);
+            appointment_card.setBackgroundColor(Color.parseColor("#d7b6ff"));
             status.setText("Status: Waiting");
         }else if (currentAppointment.getAccepted() == 1){
-            appointment_card.setBackgroundColor(R.color.accept);
+            appointment_card.setBackgroundColor(Color.parseColor("#B6FFCE"));
             status.setText("Status: Accepted");
         }else{
-            appointment_card.setBackgroundColor(R.color.decline);
+            appointment_card.setBackgroundColor(Color.parseColor("#ffb6b6"));
             status.setText("Status: Declined");
         }
 
