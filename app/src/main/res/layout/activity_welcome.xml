@@ -34,34 +34,55 @@
     <ImageView
         android:id="@+id/doctor"
         android:layout_width="wrap_content"
-        android:layout_height="550dp"
+        android:layout_height="530dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:src="@drawable/doctor"/>
 
-
-    <Button
-        android:id="@+id/register_button"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:text="Register"/>
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/white"
-        android:padding="14dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginEnd="50dp"
-        android:text="Register"
-        android:textAllCaps="false"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        android:textStyle="bold"/>
+        android:layout_margin="3dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/register_as_doctor_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:layout_margin="5dp"
+            android:text="Doctor"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+        <Button
+            android:id="@+id/register_as_User_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:layout_margin="5dp"
+            android:text="User"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/signin_textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/acme"
         android:text="Sign in?"
-        android:layout_marginTop="5dp"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="18dp" />
