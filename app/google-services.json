@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "700700728646",
+    "project_id": "meetdoc-277a1",
+    "storage_bucket": "meetdoc-277a1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:700700728646:android:b9161a37fd7e90e8e09947",
+        "android_client_info": {
+          "package_name": "com.example.meetdoc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "700700728646-cfl0kv9562nlqvbgtbe6vdcqchedr6ti.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.meetdoc",
+            "certificate_hash": "2a436f1dab07e628d5845c55d101fe42f2f2021b"
+          }
+        },
+        {
+          "client_id": "700700728646-5a69h9ogqlqe77hae3ov59eghnf5afvb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDK26XGH00ewYCn07EZEdhEknBU49OM09w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "700700728646-5a69h9ogqlqe77hae3ov59eghnf5afvb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
