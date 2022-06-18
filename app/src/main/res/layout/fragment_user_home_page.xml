@@ -29,7 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/user_name"
-        android:text="Pranava"
+        android:text=""
         android:textStyle="bold"
         android:textSize="45dp"
         android:paddingLeft="30dp"
@@ -68,6 +68,7 @@
                     android:textSize="25dp" />
 
                 <ImageView
+                    android:id="@+id/add_appointment"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:src="@drawable/add_icon" />
