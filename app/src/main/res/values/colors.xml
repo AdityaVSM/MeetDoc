@@ -20,9 +20,9 @@
     <color name="bg1">#6FCDCDCD</color>
     <color name="bg2">#6FE6E6E6</color>
 
-    <color name="accept">#70CDFFC</color>
-    <color name="decline">#6FCDCDCD</color>
-    <color name="wait">#70CDFFF5</color>
+    <color name="accept">#6F529E36</color>
+    <color name="decline">#6F9E3636</color>
+    <color name="wait">#6F9E8736</color>
     <color name="loginBkColor">#f0f0f0</color>
     <color name="whiteCardColor">#fff</color>
 </resources>

@@ -66,7 +66,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="360dp"
                     android:padding="10dp"
-                    android:background="@color/bg2">
+                    android:background="@color/white">
                 </ListView>
     </LinearLayout>
 

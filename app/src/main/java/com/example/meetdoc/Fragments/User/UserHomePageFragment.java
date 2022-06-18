@@ -34,9 +34,10 @@ public class UserHomePageFragment extends Fragment {
         appointments_list.add(new Appointments(1,2,"Prathvi","Niranjan","14/02/2022","12:00","MD"));
         appointments_list.add(new Appointments(1,2,"Prathvi","Niranjan","14/02/2022","12:00","MD"));
         appointments_list.add(new Appointments(1,2,"Prathvi","Niranjan","14/02/2022","12:00","MD"));
+
         appointments_adapter = new AppointmentAdapter(getActivity().getApplicationContext(),appointments_list);
 
         user_appointment_list_view.setAdapter(appointments_adapter);
-        return inflater.inflate(R.layout.fragment_user_home_page, container, false);
+        return view;
     }
 }
