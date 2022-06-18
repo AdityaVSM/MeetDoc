@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -31,6 +32,7 @@ public class SiginActivity extends AppCompatActivity {
         login_email = findViewById(R.id.login_email);
         login_password = findViewById(R.id.login_password);
         login_button = findViewById(R.id.login_button);
+        TextView signup_button = findViewById(R.id.toSignUp);
 
         auth = FirebaseAuth.getInstance();
 
@@ -64,6 +66,13 @@ public class SiginActivity extends AppCompatActivity {
                         }
                     });
                 }
+            }
+        });
+
+        signup_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SiginActivity.this, userSignup.class));
             }
         });
     }

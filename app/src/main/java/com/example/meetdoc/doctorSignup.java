@@ -6,9 +6,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -22,7 +24,8 @@ import com.example.meetdoc.Models.Doctor;
 
 
 public class doctorSignup extends AppCompatActivity {
-
+    String[] designation = {"Doctorate of Medicine", "Master of Chirurgiae" , "Bachelor of Medicine, Bachelor of Surgery", "Master of Surgery"};
+    String[] specializations = {"Aerospace Medicine", "Anatomy" , "Anesthesiology", "ENT", "Nuclear medicine", "Ophthalmology", "dental"};
 
     EditText doctorName,doctorEmail,doctorPassword;
     Spinner doctorDesignation, doctorSpecialization;
@@ -34,6 +37,7 @@ public class doctorSignup extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor_signup);
 
@@ -43,9 +47,18 @@ public class doctorSignup extends AppCompatActivity {
         doctorDesignation = findViewById(R.id.doctorDesignation);
         doctorSpecialization = findViewById(R.id.doctorSpecialization);
         registerButton = findViewById(R.id.registerButton);
+        TextView signin_button = findViewById(R.id.toSignIn);
 
         auth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
+
+
+        signin_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(doctorSignup.this, SiginActivity.class));
+            }
+        });
 
 
 //        doctorDesignation.setOnItemClickListener(new );
@@ -93,5 +106,20 @@ public class doctorSignup extends AppCompatActivity {
 
             }
         });
+
+        Spinner doctorDesignationSpinner = findViewById(R.id.doctorDesignation);
+        //Creating the ArrayAdapter instance having the country list
+        ArrayAdapter aa = new ArrayAdapter(this,android.R.layout.simple_spinner_item,designation);
+        aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //Setting the ArrayAdapter data on the Spinner
+        doctorDesignationSpinner.setAdapter(aa);
+
+        Spinner doctorSpecializationSpinner = findViewById(R.id.doctorSpecialization);
+        //Creating the ArrayAdapter instance having the country list
+        ArrayAdapter ab = new ArrayAdapter(this,android.R.layout.simple_spinner_item,specializations);
+        aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //Setting the ArrayAdapter data on the Spinner
+        doctorSpecializationSpinner.setAdapter(ab);
     }
+
 }

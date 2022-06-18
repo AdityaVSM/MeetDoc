@@ -48,6 +48,29 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New to MeetDoc? "
+            />
+        <TextView
+            android:id="@+id/toSignUp"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="  Sign up"
+            />
+    </LinearLayout>
+
     <Button
         android:id="@+id/login_button"
         android:layout_width="wrap_content"
