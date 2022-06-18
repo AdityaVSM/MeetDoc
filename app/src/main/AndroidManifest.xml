@@ -9,6 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MeetDoc">
+        <activity
+            android:name=".SiginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".doctorSignupActivity"
+            android:exported="false" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
