@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MeetDoc">
         <activity
+            android:name=".BookAppointment"
+            android:exported="false" />
+        <activity
             android:name=".AddAppointment"
             android:exported="false" />
         <activity android:name=".DoctorHomeActivity" />

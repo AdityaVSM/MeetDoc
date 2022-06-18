@@ -1,4 +1,4 @@
-package com.example.meetdoc.Models;
+package com.example.meetdoc.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
