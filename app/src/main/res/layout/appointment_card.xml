@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Accept #70CDFFCD-->
+<!-- Decline #70FFCDCF-->
+<!-- Wait #70CDFFF5-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:background="#70CDFFF5"
+    android:padding="6dp"
+    android:layout_weight="11"
+    android:layout_height="75dp">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_weight="0.8"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/person"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dentist"
+            android:textColor="#606060"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/dr_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:text="Dr Ramachandra Bola"
+            android:textColor="@color/textColor2"
+            android:textSize="13dp" />
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-5dp"
+            android:text="Status: Accepted"
+            android:textColor="@color/textColor2"
+            android:textSize="14dp" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="20dp"
+        android:textColor="@color/textColor1"
+        android:layout_weight="0.3"
+        android:layout_height="match_parent"
+        android:padding="15dp"
+        android:layout_alignParentRight="true"
+        android:text="8:35pm"/>
+</LinearLayout>

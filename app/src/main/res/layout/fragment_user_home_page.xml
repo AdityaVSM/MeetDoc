@@ -1,14 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingEnd="20dp"
+    android:layout_marginStart="20dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginEnd="20dp"
     tools:context=".Fragments.User.UserHomePageFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal">
+       <TextView
+           android:layout_width="2dp"
+           android:layout_weight="0.9"
+           android:layout_height="wrap_content"
+           android:text=" 👋🏾 Hola,"
+           android:textSize="28dp"/>
+       <ImageView
+           android:layout_width="40dp"
+           android:layout_height="40dp"
+           android:src="@drawable/ic_baseline_notifications_24" />
+   </LinearLayout>
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="hello_user_fragment" />
+        android:layout_height="wrap_content"
+        android:id="@+id/user_name"
+        android:text="Pranava"
+        android:textStyle="bold"
+        android:textSize="45dp"
+        android:paddingLeft="30dp"
+        android:textColor="@color/textColorMain"/>
 
-</FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/bg1"
+            android:padding="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="2dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.9"
+                android:fontFamily="@font/allerta"
+                android:text="Apointments"
+                android:textSize="25dp" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_baseline_add_circle_outline_24" />
+        </LinearLayout>
+                <ListView
+                    android:layout_width="match_parent"
+                    android:layout_height="360dp"
+                    android:padding="10dp"
+                    android:background="@color/bg2">
+                </ListView>
+    </LinearLayout>
+
+</LinearLayout>

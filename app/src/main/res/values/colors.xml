@@ -13,7 +13,12 @@
     <color name="colorAccent">#00A5FF</color>
     <!-- colors for modern ui -->
     <color name="whiteTextColor">#fff</color>
-    <color name="primaryTextColor">#2661FA</color>
+    <color name="textColor1">#606060</color>
+    <color name="textColor2">#919191</color>
+    <color name="textColorMain">#2196F3</color>
+
+    <color name="bg1">#6FCDCDCD</color>
+    <color name="bg2">#6FE6E6E6</color>
     <color name="loginBkColor">#f0f0f0</color>
     <!-- colros for card -->
     <color name="whiteCardColor">#fff</color>
