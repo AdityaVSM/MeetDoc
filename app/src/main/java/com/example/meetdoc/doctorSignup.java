@@ -71,7 +71,7 @@ public class doctorSignup extends AppCompatActivity {
                                 Toast.makeText(doctorSignup.this, "Registration successful", Toast.LENGTH_SHORT).show();
 
                                 //Store data in database
-                                DatabaseReference databaseReference = database.getReference().child("user").child(auth.getUid());
+                                DatabaseReference databaseReference = database.getReference().child("doctor").child(auth.getUid());
                                 Doctor current_user = new Doctor(name,auth.getUid(),email);
 //                                current_user.setDesignation(doctorDesignation.getSelectedItem().toString());
 //                                current_user.setSpecialization(doctorSpecialization.getSelectedItem().toString());
