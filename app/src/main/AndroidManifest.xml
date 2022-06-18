@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MeetDoc">
-        <activity android:name=".DoctorHomeActivity"></activity>
+        <activity
+            android:name=".AddAppointment"
+            android:exported="false" />
+        <activity android:name=".DoctorHomeActivity" />
         <activity android:name=".WelcomeActivity" />
         <activity
             android:name=".AppointmentDetailActivity"

@@ -7,7 +7,7 @@ public class Appointments {
     public Appointments(int patient_id, int doctor_id,String patient_name, String doctor_name, String slot_date, String slot_time, String doctor_specialization) {
         this.patient_id = patient_id;
         this.doctor_id = doctor_id;
-        this.accepted = 2;
+        this.accepted = 1;
         this.patient_name = patient_name;
         this.doctor_name = doctor_name;
         this.slot_date = slot_date;
