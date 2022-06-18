@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Accept #70CDFFCD-->
-<!-- Decline #70FFCDCF-->
-<!-- Wait #70CDFFF5-->
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
-    android:id="@+id/appointment_card"
     android:layout_width="match_parent"
-    android:padding="6dp"
-    android:layout_weight="11"
-    android:layout_height="75dp">
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/appointment_card"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:padding="6dp"
+        android:layout_weight="11"
+        android:layout_height="75dp">
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -51,4 +56,5 @@
         android:padding="15dp"
         android:layout_alignParentRight="true"
         android:text="8:35pm"/>
+</LinearLayout>
 </LinearLayout>

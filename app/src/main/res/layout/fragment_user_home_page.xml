@@ -70,7 +70,7 @@
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/ic_baseline_add_circle_outline_24" />
+                    android:src="@drawable/add_icon" />
             </LinearLayout>
                     <ListView
                         android:id="@+id/user_appointment_list_view"
@@ -78,7 +78,7 @@
                         android:layout_height="360dp"
                         android:padding="10dp"
                         android:background="@null"
-                        android:dividerHeight="10dp">
+                        android:divider="@null">
                     </ListView>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
