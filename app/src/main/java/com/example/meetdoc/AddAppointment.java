@@ -19,6 +19,10 @@ public class AddAppointment extends AppCompatActivity {
         specializationView = findViewById(R.id.specialization);
         Specialization specialization = new Specialization(getApplicationContext(), specializationList, spcializationImgs);
         specializationView.setAdapter(specialization);
+    }
 
+    @Override
+    public void onBackPressed() {
+        finish();
     }
 }
