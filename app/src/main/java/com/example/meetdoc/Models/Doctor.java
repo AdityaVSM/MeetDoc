@@ -3,11 +3,21 @@ package com.example.meetdoc.Models;
 public class Doctor {
     String name,uid,email,designation,specialization;
     int ratings,no_of_people_to_treat;
+    boolean user;
 
     public Doctor(String name, String uid, String email) {
         this.name = name;
         this.uid = uid;
         this.email = email;
+        this.no_of_people_to_treat = 0;
+    }
+
+    public boolean isUser() {
+        return user;
+    }
+
+    public void setUser(boolean user) {
+        this.user = user;
     }
 
     public String getName() {

@@ -3,14 +3,26 @@ package com.example.meetdoc.Models;
 
 public class User {
     String user_name,user_id, user_email, user_password, dob, blood_group, gender;
+    boolean user;
 
-    public User(String user_name,String uid, String user_email, String dob, String blood_group, String gender) {
+
+
+    public User(String user_name, String uid, String user_email, String dob, String blood_group, String gender) {
         this.user_id = uid;
         this.user_name = user_name;
         this.user_email = user_email;
         this.dob = dob;
         this.blood_group = blood_group;
+        this.user = true;
         this.gender = gender;
+    }
+
+    public boolean isUser() {
+        return user;
+    }
+
+    public void setUser(boolean user) {
+        this.user = user;
     }
 
     public String getUser_name() {

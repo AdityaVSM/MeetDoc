@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -33,6 +34,8 @@ public class doctorSignup extends AppCompatActivity {
     FirebaseAuth auth;
     FirebaseDatabase database;
 
+    String doctor_designation_str, doctor_specialization_str;
+
     String email_pattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
     @Override
@@ -53,15 +56,44 @@ public class doctorSignup extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
 
 
-        signin_button.setOnClickListener(new View.OnClickListener() {
+
+        Spinner doctorDesignationSpinner = findViewById(R.id.doctorDesignation);
+        //Creating the ArrayAdapter instance having the country list
+        ArrayAdapter aa = new ArrayAdapter(this,android.R.layout.simple_spinner_item,designation);
+        aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //Setting the ArrayAdapter data on the Spinner
+        doctorDesignationSpinner.setAdapter(aa);
+
+        Spinner doctorSpecializationSpinner = findViewById(R.id.doctorSpecialization);
+        //Creating the ArrayAdapter instance having the country list
+        ArrayAdapter ab = new ArrayAdapter(this,android.R.layout.simple_spinner_item,specializations);
+        aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //Setting the ArrayAdapter data on the Spinner
+        doctorSpecializationSpinner.setAdapter(ab);
+
+        doctorDesignationSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onClick(View v) {
-                startActivity(new Intent(doctorSignup.this, SiginActivity.class));
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                doctor_designation_str = designation[position];
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                doctor_designation_str = "Doctorate of Medicine";
             }
         });
+        doctorSpecializationSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                doctor_specialization_str = specializations[position];
 
+            }
 
-//        doctorDesignation.setOnItemClickListener(new );
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                doctor_specialization_str = "Aerospace Medicine";
+            }
+        });
 
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,10 +117,11 @@ public class doctorSignup extends AppCompatActivity {
 
                                 //Store data in database
                                 DatabaseReference databaseReference = database.getReference().child("doctor").child(auth.getUid());
-                                Doctor current_user = new Doctor(name,auth.getUid(),email);
-//                                current_user.setDesignation(doctorDesignation.getSelectedItem().toString());
-//                                current_user.setSpecialization(doctorSpecialization.getSelectedItem().toString());
-                                databaseReference.setValue(current_user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                Doctor current_doctor = new Doctor(name,auth.getUid(),email);
+                                current_doctor.setSpecialization(doctor_specialization_str);
+                                current_doctor.setDesignation(doctor_designation_str);
+                                current_doctor.setUser(false);
+                                databaseReference.setValue(current_doctor).addOnCompleteListener(new OnCompleteListener<Void>() {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {
                                         if(task.isSuccessful()) {
@@ -107,19 +140,15 @@ public class doctorSignup extends AppCompatActivity {
             }
         });
 
-        Spinner doctorDesignationSpinner = findViewById(R.id.doctorDesignation);
-        //Creating the ArrayAdapter instance having the country list
-        ArrayAdapter aa = new ArrayAdapter(this,android.R.layout.simple_spinner_item,designation);
-        aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        //Setting the ArrayAdapter data on the Spinner
-        doctorDesignationSpinner.setAdapter(aa);
 
-        Spinner doctorSpecializationSpinner = findViewById(R.id.doctorSpecialization);
-        //Creating the ArrayAdapter instance having the country list
-        ArrayAdapter ab = new ArrayAdapter(this,android.R.layout.simple_spinner_item,specializations);
-        aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        //Setting the ArrayAdapter data on the Spinner
-        doctorSpecializationSpinner.setAdapter(ab);
+
+        signin_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(doctorSignup.this, SiginActivity.class));
+            }
+        });
+
     }
 
 }
