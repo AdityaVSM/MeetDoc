@@ -3,12 +3,199 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginBottom="50dp"
     tools:context=".Fragments.User.UserProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="hello_profile_fragment" />
+        android:orientation="vertical"
+        tools:context=".MainActivity"
+        tools:ignore="HardcodedText">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="30dp"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:text="Profile"
+                    android:textSize="25dp"/>
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginBottom="30dp"
+                    android:maxWidth="150dp"
+                    android:maxHeight="150dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/img">
+                </de.hdodenhof.circleimageview.CircleImageView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:id="@+id/n1"
+                    android:layout_height="55dp"
+                    android:background="@drawable/ic_baseline_add_circle_outline_24"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp">
+                    <EditText
+                        android:id="@+id/name"
+                        android:layout_weight="0.7"
+                        android:layout_marginTop="18dp"
+                        android:layout_height="match_parent"
+                        android:text="Name"
+                        android:textColor="@color/black"
+                        android:enabled="false"
+                        android:maxLines="1"
+                        android:inputType="text"
+                        android:textSize="16sp"
+                        android:layout_width="1dp"/>
+                    <ImageView
+                        android:id="@+id/namePencil"
+                        android:layout_width="30dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/edit"/>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:id="@+id/dl"
+                    android:layout_height="55dp"
+                    android:background="@drawable/ic_baseline_add_circle_outline_24"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp">
+                    <EditText
+                        android:id="@+id/dob"
+                        android:layout_weight="0.7"
+                        android:layout_marginTop="18dp"
+                        android:layout_height="match_parent"
+                        android:text="Date Of Birth"
+                        android:textColor="@color/black"
+                        android:enabled="false"
+                        android:maxLines="1"
+                        android:inputType="date"
+                        android:textSize="16sp"
+                        android:layout_width="1dp"/>
+                    <ImageView
+                        android:id="@+id/dobPencil"
+                        android:layout_width="30dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/edit"/>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:id="@+id/el"
+                    android:layout_height="55dp"
+                    android:background="@drawable/ic_baseline_add_circle_outline_24"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp">
+                    <EditText
+                        android:id="@+id/email"
+                        android:layout_weight="0.7"
+                        android:layout_marginTop="18dp"
+                        android:layout_height="match_parent"
+                        android:text="Email"
+                        android:enabled="false"
+                        android:textColor="@color/black"
+                        android:maxLines="1"
+                        android:inputType="textEmailAddress"
+                        android:textSize="16sp"
+                        android:layout_width="1dp"/>
+                    <ImageView
+                        android:id="@+id/emailPencil"
+                        android:layout_width="30dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/edit"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:id="@+id/pl"
+                    android:layout_height="55dp"
+                    android:background="@drawable/ic_baseline_add_circle_outline_24"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp">
+                    <EditText
+                        android:id="@+id/phoneNumber"
+                        android:layout_weight="0.7"
+                        android:layout_marginTop="18dp"
+                        android:layout_height="match_parent"
+                        android:text="Phone Number"
+                        android:textColor="@color/black"
+                        android:maxLines="1"
+                        android:inputType="number"
+                        android:enabled="false"
+                        android:textSize="16sp"
+                        android:layout_width="1dp"/>
+                    <ImageView
+                        android:id="@+id/phoneNumberPencil"
+                        android:layout_width="30dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/edit"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/cancel_button"
+                        android:layout_width="150dp"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginEnd="25dp"
+                        android:layout_marginBottom="5dp"
+                        android:backgroundTint="@color/black"
+                        android:text="cancel"
+                        android:textSize="20dp" />
+
+                    <Button
+                        android:id="@+id/submit_button"
+                        android:layout_width="150dp"
+                        android:layout_height="60dp"
+                        android:layout_marginStart="25dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginBottom="5dp"
+                        android:backgroundTint="@color/textColorMain"
+                        android:text="Submit"
+                        android:textSize="20dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
 
 </FrameLayout>
