@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout android:layout_width="match_parent"
+    android:id="@+id/date"
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
@@ -9,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Doctor Signup"
+        android:text="User Signup"
         android:textSize="30sp"
         android:textStyle="bold"
         android:textColor="#000000" />
@@ -65,12 +66,39 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:id="@+id/dobLayout"
+        android:layout_height="55dp"
+        android:background="@drawable/round_back_dark_blue5_15"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp">
+        <TextView
+            android:id="@+id/dob"
+            android:layout_weight="0.7"
+            android:layout_marginTop="15dp"
+            android:layout_height="match_parent"
+            android:hint="Date Of Birth"
+            android:maxLines="1"
+            android:inputType="date"
+            android:textSize="16sp"
+             android:layout_width="1dp"/>
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_baseline_date_range_24"/>
+
+    </LinearLayout>
+
     <Spinner
-        android:id="@+id/designation"
+        android:id="@+id/bloodgroup"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:background="@drawable/round_back_dark_blue5_15"
-        android:hint="Designation"
+        android:hint="Blood Groop"
         android:maxLines="1"
         android:inputType="text"
         android:textSize="16sp"
@@ -80,21 +108,38 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"/>
 
-    <Spinner
-        android:id="@+id/specialization"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:background="@drawable/round_back_dark_blue5_15"
-        android:hint="Specialization"
-        android:maxLines="1"
-        android:inputType="text"
-        android:textSize="16sp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:paddingStart="20dp"
         android:paddingEnd="20dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"/>
+        android:layout_marginEnd="20dp">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Gender"
+            />
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Male"
+                />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Female"
+                />
+        </RadioGroup>
+    </LinearLayout>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -102,7 +147,6 @@
         android:layout_marginTop="20dp"
         android:textSize="20dp"
         />
-
 
 
 
