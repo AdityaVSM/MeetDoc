@@ -2,10 +2,11 @@ package com.example.meetdoc.Models;
 
 
 public class User {
-    String user_name,user_id, user_email, user_password, dob, blood_group, gender;
+    String user_name,user_id, user_email, user_password, dob, blood_group, gender, phone_number;
     boolean user;
 
-
+    public User() {
+    }
 
     public User(String user_name, String uid, String user_email, String dob, String blood_group, String gender) {
         this.user_id = uid;
@@ -15,6 +16,15 @@ public class User {
         this.blood_group = blood_group;
         this.user = true;
         this.gender = gender;
+        this.phone_number = "0";
+    }
+
+    public String getPhone_number() {
+        return phone_number;
+    }
+
+    public void setPhone_number(String phone_number) {
+        this.phone_number = phone_number;
     }
 
     public boolean isUser() {
