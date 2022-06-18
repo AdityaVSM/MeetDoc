@@ -15,7 +15,7 @@
     <TextView
         android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center"
         android:text="Please login to your account"
-        android:textSize="5sp"
+        android:textSize="13dp"
         android:textStyle="bold" />
 
     <EditText

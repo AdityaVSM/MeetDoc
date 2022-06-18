@@ -60,6 +60,14 @@ public class userSignup extends AppCompatActivity{
         user_gender = findViewById(R.id.user_gender);
         dobLayout = findViewById(R.id.dobLayout);
         user_signup_button = findViewById(R.id.user_signup_button);
+        TextView signin_button = findViewById(R.id.toSignIn);
+
+        signin_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(userSignup.this, SiginActivity.class));
+            }
+        });
 
 
         dobLayout.setOnClickListener(new View.OnClickListener() {
