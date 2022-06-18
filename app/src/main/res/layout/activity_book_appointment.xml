@@ -17,7 +17,7 @@
         android:textColor="@color/textColor1"
         android:textSize="30sp"
         android:padding="5dp"
-        android:text="Appointment Card"/>
+        android:text="Book Appointment"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -69,37 +69,40 @@
                 android:textColor="@color/textColor1"
                 android:text="Dentist"
                 android:textSize="25dp"/>
-        </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="30dp"
-                android:paddingLeft="10dp"
-                android:text="Date And Time:"
-                android:textSize="18dp"/>
+                android:id="@+id/dntLayout"
+                android:layout_height="55dp"
+                android:background="@drawable/round_back_dark_blue5_15"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp">
+                <TextView
+                    android:id="@+id/user_dob"
+                    android:layout_weight="0.7"
+                    android:layout_marginTop="15dp"
+                    android:layout_height="match_parent"
+                    android:hint="Date and Time"
+                    android:maxLines="1"
+                    android:inputType="date"
+                    android:textSize="16sp"
+                    android:layout_width="1dp"/>
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_baseline_date_range_24"/>
 
-            <TextView
-                android:layout_width="match_parent"
+            </LinearLayout>
+
+            <Button
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingBottom="10dp"
-                android:paddingLeft="10dp"
-                android:textColor="@color/textColor1"
-                android:text="12:Am"
-                android:textSize="25dp"/>
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center_horizontal"
+                android:text="Submit"/>
         </LinearLayout>
-
     </LinearLayout>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center_horizontal"
-        android:backgroundTint="@color/decline"
-        android:text="Cancle Appointment"/>
 </LinearLayout>
