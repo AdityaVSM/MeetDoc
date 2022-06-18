@@ -62,6 +62,7 @@
                 android:src="@drawable/ic_baseline_add_circle_outline_24" />
         </LinearLayout>
                 <ListView
+                    android:id="@+id/user_appointment_list_view"
                     android:layout_width="match_parent"
                     android:layout_height="360dp"
                     android:padding="10dp"

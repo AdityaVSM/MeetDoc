@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Accept #70CDFFCD-->
-<!-- Decline #70FFCDCF-->
-<!-- Wait #70CDFFF5-->
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
+    android:id="@+id/appointment_card"
     android:layout_width="match_parent"
     android:background="#70CDFFF5"
     android:padding="6dp"
@@ -18,7 +17,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/person"
+            android:id="@+id/doctor_spc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Dentist"

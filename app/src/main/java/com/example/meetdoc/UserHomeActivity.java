@@ -8,17 +8,23 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.meetdoc.Adapter.AppointmentAdapter;
 import com.example.meetdoc.Fragments.User.UserHomePageFragment;
 import com.example.meetdoc.Fragments.User.UserProfileFragment;
 import com.example.meetdoc.Fragments.User.UserSettingsFragment;
+import com.example.meetdoc.Models.Appointments;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.ArrayList;
 
 public class UserHomeActivity extends AppCompatActivity {
 
     FirebaseAuth auth;
     BottomNavigationView bottomNavigationView;
+            ;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +32,6 @@ public class UserHomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_user_home);
 
         bottomNavigationView = findViewById(R.id.bottom_navigation_bar);
-
         auth = FirebaseAuth.getInstance();
         if(auth.getCurrentUser()==null){
             startActivity(new Intent(UserHomeActivity.this,SiginActivity.class));
@@ -35,6 +40,7 @@ public class UserHomeActivity extends AppCompatActivity {
         UserHomePageFragment homeFragment = new UserHomePageFragment();
         UserSettingsFragment settingFragment = new UserSettingsFragment();
         UserProfileFragment profileFragment = new UserProfileFragment();
+
 
 
         bottomNavigationView = findViewById(R.id.bottom_navigation_bar);
