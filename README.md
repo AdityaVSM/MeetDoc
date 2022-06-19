@@ -1,8 +1,15 @@
 <h1 align="center">MeetDoc</h1>
 <p align="center"><a href="https://ibb.co/xFN07WG"><img src="https://i.ibb.co/mN3wckt/doctor.png" alt="doctor" border="0" width="200px" height="250px"></a></p>
-<h4 align="left">Here we are happy to present our healthcare management system Application "MeetDoc", We are a company that provides effective healthcare solutions for users.We are a company which is narrowing the gap between ai and healthcare.We are a company which is providing healthcare services at the tip of their fingers.We believe in providing world class healthcare with affordable rate. We translate the alien medical language to normal english. “Let your body be your holy temple” we will be the guardian of that temple</h4>
-<br/>
-<h4 align="left">Basically Our App SignIn through two user access such as Doctor and Patient, After Registering in the App, Patient can book an appointment with the specialized doctors in their allotted slots per day. After alloting the slot, Doctor verifies the slots of that time and confirm for consultancy.</h4 align="left">We also Implemented a good AI-ML Concept,which predict the disease based on the given symptoms by user,The dataset contained totally 132 unique symptoms related to the various diseases. The dataset is preprocessed for the severity of symptoms and KNN classifier was trained which resulted in 95% of accuracy.The model is hosted with flask server to expose the api to the backend Meetdoc application.The api is consumed with in this repository</h4>
+<h2 align="left">Here we are happy to present our healthcare management system Application "MeetDoc",<br> </h2>
+
+### 🛠️ Brief of features Used:
+<ul>
+  <li>Patient/Doctor seperate signUP</li>
+  <li>Patient can request appointment with the doctor</li>
+  <li>Doctor can accept or reject patient's appointment request</li>
+  <li>Good performing AI model for disease prediction and suggesting basic household treatment based on given symptoms</li>  
+  <li>Simple UI, so that even a layman can easily use the app</li>  
+</ul>
 
 
 ### 🛠️ Tools Used:
@@ -11,6 +18,11 @@
   ![Firebase](https://img.shields.io/badge/firebase-ffca28?style=for-the-badge&logo=firebase)
   ![python](https://img.shields.io/badge/Python-ffca28?style=for-the-badge&logo=Python) 
   ![XML](https://img.shields.io/badge/xml-ffca28?style=for-the-badge&logo=xml) 
+  
+### Screenshots
+<p align="center">
+  
+</p>
   
 
 
