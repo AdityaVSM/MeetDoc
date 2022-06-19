@@ -107,11 +107,6 @@ public class SiginActivity extends AppCompatActivity {
                 // This will simple call your callback containing a boolean true/false
                 for(DataSnapshot data_snapshot: dataSnapshot.getChildren()){
                     String uid = data_snapshot.child("user_id").getValue().toString();
-                    String name = data_snapshot.child("user_name").getValue().toString();
-
-                    System.out.println(name);
-                    System.out.println(uid);
-                    System.out.println(auth.getCurrentUser().getUid());
                     if(uid.equals(auth.getCurrentUser().getUid().toString())) {
                         System.out.println("exists");
                         finishedCallback.callback(true);

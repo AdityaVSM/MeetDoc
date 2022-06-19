@@ -23,50 +23,61 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
-
-
+                <LinearLayout
+                    android:layout_marginTop="25dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
                     <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="25dp"
-                        android:gravity="center_horizontal"
+                        android:gravity="center"
+                        android:layout_weight="1"
                         android:text="About the App"
                         android:textColor="@color/black"
                         android:textSize="25dp"
                         android:textStyle="bold" />
-
-                    <ImageView
-                        android:id="@+id/img"
-                        android:layout_width="200dp"
-                        android:layout_height="150dp"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="65dp"
-                        android:contentDescription="@string/app_name"
-                        android:src="@drawable/doctor" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginStart="30dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginEnd="30dp"
-                        android:text="We are a company that provides effective healthcare solutions for users.We are a company which is narrowing the gap between ai and healthcare.We are a company which is providing healthcare services at the tip of their fingers.We believe in providing world class healthcare with affordable rate. We translate the alien medical language to normal english. “Let your body be your holy temple” we will be the guardian of that temple"
-                        android:textColor="@color/black"
-                        android:textSize="20dp"
-                        android:textStyle="bold" />
-
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal|bottom"
-                        android:layout_marginTop="30dp"
-                        android:layout_marginBottom="28dp"
-                        android:backgroundTint="@color/black"
-                        android:text="Our Team"
-                        android:textColor="@color/white" />
+                    <ImageButton
+                        android:id="@+id/logout_button"
+                        android:layout_width="40dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="right"
+                        android:background="@drawable/logout_icon" />
+                </LinearLayout>
+    
+                <ImageView
+                    android:id="@+id/img"
+                    android:layout_width="200dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="65dp"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/doctor" />
+    
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="30dp"
+                    android:text="We are a company that provides effective healthcare solutions for users.We are a company which is narrowing the gap between ai and healthcare.We are a company which is providing healthcare services at the tip of their fingers.We believe in providing world class healthcare with affordable rate. We translate the alien medical language to normal english. “Let your body be your holy temple” we will be the guardian of that temple"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+    
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="28dp"
+                    android:backgroundTint="@color/black"
+                    android:text="Our Team"
+                    android:textColor="@color/white" />
 
         </LinearLayout>
 
