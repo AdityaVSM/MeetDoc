@@ -21,7 +21,10 @@
   
 ### Screenshots
 <p align="center">
+  ![image](https://user-images.githubusercontent.com/65588835/174470746-f68d0ab4-d3f4-4f96-a933-295e28512dc2.png)
   
+  ![image](https://user-images.githubusercontent.com/65588835/174470758-66d071ef-5e99-4e85-b664-2c09db6eda4a.png)
+
 </p>
   
 
