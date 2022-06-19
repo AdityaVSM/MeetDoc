@@ -3,9 +3,11 @@ package com.example.meetdoc;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -27,13 +29,15 @@ public class AddAppointment extends AppCompatActivity {
     ArrayList<Doctor> doctors = new ArrayList<>();
     FirebaseAuth auth;
     FirebaseDatabase database;
+    Doctor chosen_doctor;
+    Button nextButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_appointment);
-        doctors.add(new Doctor("adiga", "222", "ap@123"));
-        doctors.add(new Doctor("adiga2", "222", "ap@123"));
+
+        nextButton = findViewById(R.id.nextButton);
 
         specializationView = findViewById(R.id.specialization);
         Specialization specialization = new Specialization(getApplicationContext(), specializationList, spcializationImgs);
@@ -62,7 +66,8 @@ public class AddAppointment extends AppCompatActivity {
         doctorsView.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getApplicationContext(), "doctors.get(position).getName()", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), doctors.get(position).getName(), Toast.LENGTH_LONG).show();
+                chosen_doctor = doctors.get(position);
             }
 
             @Override
@@ -70,6 +75,16 @@ public class AddAppointment extends AppCompatActivity {
 
             }
         });
+
+        nextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(AddAppointment.this,BookAppointment.class);
+                i.putExtra("chosen_doctor",chosen_doctor);
+                startActivity(i);
+            }
+        });
+
 
 
 }

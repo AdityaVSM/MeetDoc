@@ -51,9 +51,9 @@ public class UserHomePageFragment extends Fragment {
         auth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
 
-        appointments_list.add(new Appointments(1,2,"Prathvi","Niranjan","14/02/2022","12:00","MD"));
-        appointments_list.add(new Appointments(1,2,"Prathvi","Niranjan","14/02/2022","12:00","MD"));
-        appointments_list.add(new Appointments(1,2,"Prathvi","Niranjan","14/02/2022","12:00","MD"));
+        appointments_list.add(new Appointments("1","2","Prathvi","Niranjan","14/02/2022","12:00","MD"));
+        appointments_list.add(new Appointments("1","2","Prathvi","Niranjan","14/02/2022","12:00","MD"));
+        appointments_list.add(new Appointments("1","2","Prathvi","Niranjan","14/02/2022","12:00","MD"));
 
         appointments_adapter = new AppointmentAdapter(getActivity().getApplicationContext(),appointments_list);
 

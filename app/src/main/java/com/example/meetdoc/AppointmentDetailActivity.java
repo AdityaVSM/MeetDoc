@@ -14,8 +14,5 @@ public class AppointmentDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_appointment_detail);
 
-        Intent i = getIntent();
-        Doctor curr_doctor = (Doctor) i.getSerializableExtra("chosen_doctor");
-        System.out.println("in each"+curr_doctor.getName());
     }
 }
