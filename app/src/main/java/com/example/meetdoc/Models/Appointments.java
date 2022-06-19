@@ -2,13 +2,13 @@ package com.example.meetdoc.Models;
 
 public class Appointments {
     String patient_id, doctor_id;
-    int accepted;
+    long accepted;
     String patient_name, doctor_name, slot_date, slot_time, doctor_specialization;
 
     public Appointments(String patient_id, String doctor_id,String patient_name, String doctor_name, String slot_date, String slot_time, String doctor_specialization) {
         this.patient_id = patient_id;
         this.doctor_id = doctor_id;
-        this.accepted = 1;
+        this.accepted = 2;
         this.patient_name = patient_name;
         this.doctor_name = doctor_name;
         this.slot_date = slot_date;
@@ -40,11 +40,11 @@ public class Appointments {
         this.doctor_id = doctor_id;
     }
 
-    public int getAccepted() {
+    public long getAccepted() {
         return accepted;
     }
 
-    public void setAccepted(int accepted) {
+    public void setAccepted(long accepted) {
         this.accepted = accepted;
     }
 
