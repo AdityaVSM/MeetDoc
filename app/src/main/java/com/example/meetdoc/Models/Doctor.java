@@ -1,9 +1,13 @@
 package com.example.meetdoc.Models;
 
-public class Doctor {
+import java.io.Serializable;
+
+public class Doctor implements Serializable {
     String name,uid,email,designation,specialization;
     int ratings,no_of_people_to_treat;
     boolean user;
+
+    public Doctor(){}
 
     public Doctor(String name, String uid, String email) {
         this.name = name;
