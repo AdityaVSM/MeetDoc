@@ -1,14 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.Doctor.DoctorHomeFragment">
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:layout_marginStart="20dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginEnd="20dp"
+    tools:context=".Fragments.User.UserHomePageFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="2dp"
+            android:layout_weight="0.9"
+            android:layout_height="wrap_content"
+            android:text=" 👋🏾 Hola,"
+            android:textStyle="bold"
+            android:textSize="28dp"/>
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_baseline_notifications_24" />
+    </LinearLayout>
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:id="@+id/doctor_name"
+        android:text=""
+        android:textStyle="bold"
+        android:textSize="45dp"
+        android:paddingLeft="30dp"
+        android:textColor="@color/textColorMain"/>
 
-</FrameLayout>
+    <androidx.cardview.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardElevation="4dp"
+        card_view:cardUseCompatPadding="true"
+        card_view:cardCornerRadius="@dimen/cardview_default_radius"
+        android:outlineAmbientShadowColor="@color/bg2"
+        android:id="@+id/card_view"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/bg1"
+                android:padding="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="2dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.9"
+                    android:fontFamily="@font/allerta"
+                    android:gravity="center"
+                    android:text="Appointments"
+                    android:textColor="@color/textColor1"
+                    android:textSize="25dp" />
+
+            </LinearLayout>
+            <ListView
+                android:id="@+id/doctor_appointment_list_view"
+                android:layout_width="match_parent"
+                android:layout_height="360dp"
+                android:padding="10dp"
+                android:background="@null"
+                android:divider="@null">
+            </ListView>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

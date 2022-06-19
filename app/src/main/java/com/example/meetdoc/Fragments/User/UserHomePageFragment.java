@@ -15,9 +15,11 @@ import android.widget.TextView;
 
 import com.example.meetdoc.Adapter.AppointmentAdapter;
 import com.example.meetdoc.AddAppointment;
+import com.example.meetdoc.AiDiseasePredictorActivity;
 import com.example.meetdoc.Models.Appointments;
 import com.example.meetdoc.Models.User;
 import com.example.meetdoc.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -37,6 +39,7 @@ public class UserHomePageFragment extends Fragment {
     FirebaseAuth auth;
     FirebaseDatabase database;
     TextView user_name;
+    FloatingActionButton aiButton;
 
     public UserHomePageFragment() {}
 
@@ -47,6 +50,14 @@ public class UserHomePageFragment extends Fragment {
         user_appointment_list_view = view.findViewById(R.id.user_appointment_list_view);
         add_appointment = view.findViewById(R.id.add_appointment);
         user_name = view.findViewById(R.id.user_name);
+        aiButton = view.findViewById(R.id.ai_button);
+
+        aiButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity().getApplicationContext(), AiDiseasePredictorActivity.class));
+            }
+        });
 
         auth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
