@@ -26,7 +26,7 @@ import com.example.meetdoc.Models.Doctor;
 
 public class doctorSignup extends AppCompatActivity {
     String[] designation = {"Doctorate of Medicine", "Master of Chirurgiae" , "Bachelor of Medicine, Bachelor of Surgery", "Master of Surgery"};
-    String[] specializations = {"Aerospace Medicine", "Anatomy" , "Anesthesiology", "ENT", "Nuclear medicine", "Ophthalmology", "dental"};
+    String[] specializations = {"Dentist","Cardiologist","ENT","General"};
 
     EditText doctorName,doctorEmail,doctorPassword;
     Spinner doctorDesignation, doctorSpecialization;
