@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.example.meetdoc.Adapter.DoctorsAdapter;
 import com.example.meetdoc.Adapter.Specialization;
 import com.example.meetdoc.Models.Doctor;
+import com.example.meetdoc.Models.User;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -31,6 +32,7 @@ public class AddAppointment extends AppCompatActivity {
     FirebaseDatabase database;
     Doctor chosen_doctor;
     Button nextButton;
+    String user_name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +52,7 @@ public class AddAppointment extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
 
+        getUserDetails(database);
         specializationView.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -79,8 +82,10 @@ public class AddAppointment extends AppCompatActivity {
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent i = new Intent(AddAppointment.this,BookAppointment.class);
                 i.putExtra("chosen_doctor",chosen_doctor);
+                i.putExtra("current_user",user_name);
                 startActivity(i);
             }
         });
@@ -88,6 +93,29 @@ public class AddAppointment extends AppCompatActivity {
 
 
 }
+
+    private void getUserDetails(FirebaseDatabase database) {
+        database.getReference().child("user").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot data_snapshot : snapshot.getChildren()){
+                    User user = new User();
+                    if(data_snapshot.child("user_id").getValue().toString().equals(auth.getCurrentUser().getUid())) {
+                        user = data_snapshot.getValue(User.class);
+                        user_name = user.getUser_name();
+                        break;
+                    }
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
 
     private void getDoctorDetails(FirebaseDatabase database, String specialization_chosen) {
         doctors.clear();

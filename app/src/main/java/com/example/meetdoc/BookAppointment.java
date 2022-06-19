@@ -62,6 +62,7 @@ public class BookAppointment extends AppCompatActivity {
 
         Intent i = getIntent();
         Doctor curr_doctor = (Doctor) i.getSerializableExtra("chosen_doctor");
+        String user_name = i.getStringExtra("current_user");
 
         doctor_name.setText(curr_doctor.getName());
         doctor_specialization.setText(curr_doctor.getSpecialization());
@@ -107,18 +108,18 @@ public class BookAppointment extends AppCompatActivity {
                 Appointments current_appointment = new Appointments(
                         patient_id,
                         curr_doctor.getUid(),
-                        auth.getCurrentUser().getDisplayName(),
+                        user_name,
                         curr_doctor.getName(),
                         date,time,
                         curr_doctor.getSpecialization());
                 DatabaseReference ref = database.getReference().child("appointments");
                 ref.child(patient_id+curr_doctor.getUid()).setValue(current_appointment).addOnCompleteListener(task -> {
-                    if(task.isSuccessful())
+                    if(task.isSuccessful()) {
                         Toast.makeText(BookAppointment.this, "Appointment requested", Toast.LENGTH_SHORT).show();
+                        finish();
+                    }
                 });
             }
         });
-
-
     }
 }

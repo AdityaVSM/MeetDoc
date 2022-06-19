@@ -28,8 +28,6 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-
-
 public class UserHomePageFragment extends Fragment {
 
     AppointmentAdapter appointments_adapter;
@@ -62,12 +60,9 @@ public class UserHomePageFragment extends Fragment {
         auth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
 
-        appointments_list.add(new Appointments("1","2","Prathvi","Niranjan","14/02/2022","12:00","MD"));
-        appointments_list.add(new Appointments("1","2","Prathvi","Niranjan","14/02/2022","12:00","MD"));
-        appointments_list.add(new Appointments("1","2","Prathvi","Niranjan","14/02/2022","12:00","MD"));
+        getAppointmentDetails(database);
 
         appointments_adapter = new AppointmentAdapter(getActivity().getApplicationContext(),appointments_list);
-
         user_appointment_list_view.setAdapter(appointments_adapter);
 
         add_appointment.setOnClickListener(new View.OnClickListener() {
@@ -94,6 +89,38 @@ public class UserHomePageFragment extends Fragment {
                     }
                 }
             }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private void getAppointmentDetails(FirebaseDatabase database){
+        database.getReference().child("appointments").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                appointments_list.clear();
+                for (DataSnapshot data_Snapshot : snapshot.getChildren()){
+                    if(data_Snapshot.child("patient_id").getValue().toString().equals(auth.getCurrentUser().getUid())){
+                        String patient_id = data_Snapshot.child("patient_id").getValue().toString();
+                        String doctor_id = data_Snapshot.child("doctor_id").getValue().toString();
+                        String patient_name = data_Snapshot.child("patient_name").getValue().toString();
+                        String doctor_name = data_Snapshot.child("doctor_name").getValue().toString();
+                        String doctor_specialization = data_Snapshot.child("doctor_specialization").getValue().toString();
+                        String slot_date = data_Snapshot.child("slot_date").getValue().toString();
+                        String slot_time = data_Snapshot.child("slot_time").getValue().toString();
+                        long accepted = (long) data_Snapshot.child("accepted").getValue();
+
+                        Appointments curr_appointment = new Appointments(patient_id,doctor_id,patient_name,doctor_name,slot_date,slot_time,doctor_specialization);
+                        curr_appointment.setAccepted(accepted);
+                        appointments_list.add(curr_appointment);
+                        System.out.println(curr_appointment.getDoctor_name());
+                    }
+                }
+                appointments_adapter.notifyDataSetChanged();
+            }
+
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
