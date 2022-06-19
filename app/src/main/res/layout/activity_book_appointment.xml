@@ -39,6 +39,7 @@
                 android:textSize="18dp"/>
 
             <TextView
+                android:id="@+id/doctor_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingBottom="10dp"
@@ -62,17 +63,18 @@
                 android:textSize="18dp"/>
 
             <TextView
+                android:id="@+id/doctor_specialization"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingBottom="10dp"
                 android:paddingLeft="10dp"
-                android:textColor="@color/textColor1"
+                android:paddingBottom="10dp"
                 android:text="Dentist"
-                android:textSize="25dp"/>
+                android:textColor="@color/textColor1"
+                android:textSize="25dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:id="@+id/dntLayout"
+                android:id="@+id/date_Layout"
                 android:layout_height="55dp"
                 android:background="@drawable/round_back_dark_blue5_15"
                 android:paddingStart="20dp"
@@ -81,7 +83,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp">
                 <TextView
-                    android:id="@+id/user_dob"
+                    android:id="@+id/date_textView"
                     android:layout_weight="0.7"
                     android:layout_marginTop="15dp"
                     android:layout_height="match_parent"
@@ -91,13 +93,42 @@
                     android:textSize="16sp"
                     android:layout_width="1dp"/>
                 <ImageView
+                    android:id="@+id/date_icon"
                     android:layout_width="30dp"
                     android:layout_height="match_parent"
                     android:src="@drawable/ic_baseline_date_range_24"/>
 
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:id="@+id/time_Layout"
+                android:layout_height="55dp"
+                android:background="@drawable/round_back_dark_blue5_15"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp">
+                <TextView
+                    android:id="@+id/time_textView"
+                    android:layout_weight="0.7"
+                    android:layout_marginTop="15dp"
+                    android:layout_height="match_parent"
+                    android:hint="Date and Time"
+                    android:maxLines="1"
+                    android:inputType="date"
+                    android:textSize="16sp"
+                    android:layout_width="1dp"/>
+                <ImageView
+                    android:id="@+id/time_icon"
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/time_icon"/>
+
+            </LinearLayout>
 
             <Button
+                android:id="@+id/submit_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"

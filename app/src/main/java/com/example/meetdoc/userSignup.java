@@ -18,7 +18,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.meetdoc.Models.Doctor;
 import com.example.meetdoc.Models.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -55,7 +54,7 @@ public class userSignup extends AppCompatActivity{
         username = findViewById(R.id.user_name);
         user_email = findViewById(R.id.user_email);
         user_password = findViewById(R.id.user_password);
-        user_dob = findViewById(R.id.user_dob);
+        user_dob = findViewById(R.id.dat_and_time_picker);
         user_bg = findViewById(R.id.user_bg);
         user_gender = findViewById(R.id.user_gender);
         dobLayout = findViewById(R.id.dobLayout);

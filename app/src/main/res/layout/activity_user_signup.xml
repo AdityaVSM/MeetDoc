@@ -77,7 +77,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp">
         <TextView
-            android:id="@+id/user_dob"
+            android:id="@+id/dat_and_time_picker"
             android:layout_weight="0.7"
             android:layout_marginTop="15dp"
             android:layout_height="match_parent"
