@@ -16,9 +16,6 @@ public class Doctor implements Serializable {
         this.no_of_people_to_treat = 0;
     }
 
-    public Doctor() {
-
-    }
 
     public boolean isUser() {
         return user;
